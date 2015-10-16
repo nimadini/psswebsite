@@ -3,10 +3,14 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Persian Student Society</title>
+    {% block headStyles %}
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="../assets/css/style.css" rel="stylesheet">
+    {% endblock %}
+    {% block headScripts %}
     <script type="text/javascript" src="../assets/js/utils/jQuery/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="../assets/js/utils/bootstrap/bootstrap.min.js"></script>
+    {% endblock %}
 </head>
 <body>
 
@@ -22,7 +26,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Brand</a>
+                    <a class="navbar-brand" href="#">PSS</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -66,7 +70,11 @@
             </div><!-- /.container-fluid -->
         </nav>
 
-        <section class="block">
+        {% block bodyTop %}
+
+        {% endblock %}
+
+        <!--<section class="block">
             <div id="myCarousel" class="carousel slide">
                 <div class="carousel-inner">
                     <div class="active item">
@@ -83,7 +91,7 @@
                 <a class="carousel-control right" href="#myCarousel" data-slide="next">›</a>
 
             </div>
-        </section>
+        </section>-->
     </div>
 </div>
 
@@ -95,4 +103,7 @@
     </div>
 </footer>
 </body>
+
+{% block endScripts %}
+{% endblock %}
 </html>

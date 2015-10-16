@@ -54,6 +54,17 @@ a {
     top: 50%;
 }
 
+#owl-example {
+    padding: 0 1px;
+}
+
+#owl-example .item {
+    background: url(http://nimadini.net/resources/images/m_2.jpg) no-repeat 50%;
+    background-size: cover;
+    height: 300px;
+    width: 100%;
+}
+
 /*full width container*/
 @media (max-width: 767px) {
     .block {
