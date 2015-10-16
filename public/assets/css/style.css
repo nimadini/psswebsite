@@ -1,0 +1,63 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin-top: 10px;
+    background-color: #F0F0F0;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    text-align: justify;
+    text-justify: inter-word;
+    height: 100%;
+}
+
+a {
+    color: #00B7FF;
+}
+
+.panel {
+    border: none;
+}
+
+.page-wrap {
+    min-height: 100%;
+    /* equal to footer height */
+    margin-bottom: -85px;
+}
+
+.page-wrap:after {
+    content: "";
+    display: block;
+}
+
+.site-footer, .page-wrap:after {
+    height: 85px;
+}
+
+.site-footer {
+    color: #4D4D4D;
+}
+
+.carousel .item {
+    width: 100%; /*slider width*/
+    max-height: 600px; /*slider height*/
+}
+
+.carousel .item img {
+    width: 100%; /*img width*/
+}
+
+/*add some makeup*/
+.carousel .carousel-control {
+    background: none;
+    border: none;
+    top: 50%;
+}
+
+/*full width container*/
+@media (max-width: 767px) {
+    .block {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+}
