@@ -4,11 +4,21 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var creds = require('./config/credentials');
+var mongoose = require('mongoose');
 
 var main = require('./routes/main');
+var postCtrl = require('./controllers/post-ctrl');
 
 var app = express();
 
+/**
+ * Connect to MongoDB.
+ */
+mongoose.connect(creds.db);
+mongoose.connection.on('error', function() {
+    console.error('MongoDB Connection Error. Please make sure that MongoDB is running.');
+});
 
 // ---swig expts start
 var swig = require('swig');
@@ -26,6 +36,9 @@ swig.setDefaults({
 app.set('view cache', false);
 
 
+app.get('/getPosts', postCtrl.getPosts);
+app.post('/storePost', postCtrl.storePost);
+
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -36,6 +49,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', main);
 
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -43,8 +57,8 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-// error handlers
 
+// error handlers
 
 console.log("here");
 
