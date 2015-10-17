@@ -38,11 +38,51 @@
 {% block bodyLeft %}
 <div class="panel panel-default">
     <div class="panel-body">
-        <form action="/file-upload" class="dropzone">
+        <div class="row" style="padding: 0 16px;">
+            <div class="pull-left">
+                New Event
+            </div>
+            <div class="pull-right">
+            </div>
+        </div>
+
+        <hr>
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <input type="text" class="form-control more" id="title" placeholder="Event title">
+            </div>
+
+            <div class="col-xs-12 col-md-6">
+                <input type="text" class="form-control more" id="time" placeholder="Event time">
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-xs-12">
+               <textarea class="form-control more" rows="4" id="content" style="resize: vertical;"
+                         placeholder="What's up?"></textarea>
+            </div>
+        </div>
+
+        <form action="/file-upload" class="dropzone" style="margin-top: 15px;">
             <div class="fallback">
                 <input name="file" type="file" multiple />
             </div>
         </form>
+
+        <div class="row" style="padding: 10px 16px;">
+            <div class="pull-left" style="margin-top: 10px;">
+                <button class="btn btn-sm btn-default">
+                    <i class="fa fa-map-marker"></i>
+                </button>
+            </div>
+            <div class="pull-right" style="margin-top: 10px;">
+                <button class="btn btn-sm btn-default" style="margin-right: 4px;">Create</button>
+                <button class="btn btn-sm btn-primary">Publish</button>
+            </div>
+        </div>
+
+
     </div>
 </div>
 <div class="panel panel-default">
@@ -53,7 +93,6 @@
             </div>
             <div class="pull-right">
                 <i class="fa fa-map"></i>
-                <i class="fa fa-clock-o"></i>
             </div>
         </div>
         <hr>
@@ -111,7 +150,8 @@
 <script type="text/javascript" src="../assets/js/utils/lightbox/lightbox.min.js"></script>
 <script type="text/javascript">
     $("#owl-example").owlCarousel({
-        singleItem:true
+        singleItem: true,
+        autoPlay: 4500
     });
 </script>
 {% endblock %}
