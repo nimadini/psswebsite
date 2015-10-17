@@ -1,37 +1,50 @@
 {% extends 'layout.html' %}
+
 {% block headStyles %}
-{% parent %}
-<link rel="stylesheet" href="../assets/css/owl.carousel.css">
-<link rel="stylesheet" href="../assets/css/owl.theme.css">
-<link rel="stylesheet" href="../assets/css/font-awesome.min.css">
-<link rel="stylesheet" href="../assets/css/lightbox.css">
+    {% parent %}
+    <link rel="stylesheet" href="../assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="../assets/css/owl.theme.css">
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/css/lightbox.css">
+    <link rel="stylesheet" href="../assets/css/dropzone.min.css">
 {% endblock %}
+
 {% block headScripts %}
-{% parent %}
-<script type="text/javascript" src="../assets/js/utils/carousel/owl.carousel.min.js"></script>
+    {% parent %}
+    <script type="text/javascript" src="../assets/js/utils/carousel/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="../assets/js/utils/dropzone/dropzone.min.js"></script>
 {% endblock %}
 
 
 {% block bodyTop %}
-<div id="owl-example" class="owl-carousel">
-    <div class="item">
+    <div id="owl-example" class="owl-carousel">
+        <div class="item">
+        </div>
+        <div class="item">
+        </div>
+        <div class="item">
+        </div>
+        <div class="item">
+        </div>
+        <div class="item">
+        </div>
+        <div class="item">
+        </div>
+        <div class="item">
+        </div>
     </div>
-    <div class="item">
-    </div>
-    <div class="item">
-    </div>
-    <div class="item">
-    </div>
-    <div class="item">
-    </div>
-    <div class="item">
-    </div>
-    <div class="item">
-    </div>
-</div>
 {% endblock %}
 
 {% block bodyLeft %}
+<div class="panel panel-default">
+    <div class="panel-body">
+        <form action="/file-upload" class="dropzone">
+            <div class="fallback">
+                <input name="file" type="file" multiple />
+            </div>
+        </form>
+    </div>
+</div>
 <div class="panel panel-default">
     <div class="panel-body">
         <div style="height: 7px;">
