@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../assets/css/dropzone.min.css">
     <link href="../assets/css/remodal.css" rel="stylesheet">
     <link href="../assets/css/remodal-default-theme.css" rel="stylesheet">
+    <link href="../assets/css/jquery.datetimepicker.css" rel="stylesheet">
 {% endblock %}
 
 {% block headScripts %}
@@ -16,8 +17,9 @@
     <script type="text/javascript" src="../assets/js/utils/carousel/owl.carousel.min.js"></script>
     <script type="text/javascript" src="../assets/js/utils/dropzone/dropzone.min.js"></script>
     <script type="text/javascript" src="../assets/js/utils/modal/remodal.min.js"></script>
+    <script type="text/javascript" src="../assets/js/utils/datetime/moment-with-locales.js"></script>
+    <script type="text/javascript" src="../assets/js/utils/datetime/jquery.datetimepicker.full.min.js"></script>
 {% endblock %}
-
 
 {% block bodyTop %}
     <div id="owl-example" class="owl-carousel">
@@ -51,12 +53,12 @@
 
         <hr>
         <div class="row">
-            <div class="col-xs-12 col-md-6">
-                <input type="text" class="form-control more" id="title" placeholder="Event title">
+            <div class="col-xs-12 col-sm-7">
+                <input type="text" class="form-control" id="title" placeholder="Event title">
             </div>
 
-            <div class="col-xs-12 col-md-6">
-                <input type="text" class="form-control more" id="time" placeholder="Event time">
+            <div class="col-xs-12 col-sm-5">
+                <input type="text" class="form-control" id="time" placeholder="Event time">
             </div>
         </div>
 
@@ -88,55 +90,13 @@
                 <button class="btn btn-sm btn-primary">Publish</button>
             </div>
         </div>
-
-
     </div>
 </div>
-<div class="panel panel-default">
-    <div class="panel-body">
-        <div style="height: 7px;">
-            <div class="pull-left">
-                Game Night
-            </div>
-            <div class="pull-right">
-                <i class="fa fa-map"></i>
-            </div>
-        </div>
-        <hr>
 
-        <div class="row img-container">
-            <a href="https://pbs.twimg.com/profile_images/562739925838098432/yIJyCdCY.jpeg" data-lightbox="one">
-                <img src="https://pbs.twimg.com/profile_images/562739925838098432/yIJyCdCY.jpeg">
-            </a>
-            <a href="https://pbs.twimg.com/profile_images/562739925838098432/yIJyCdCY.jpeg" data-lightbox="one">
-                <img src="https://pbs.twimg.com/profile_images/562739925838098432/yIJyCdCY.jpeg">
-            </a>
-            <a href="https://pbs.twimg.com/profile_images/562739925838098432/yIJyCdCY.jpeg" data-lightbox="one">
-                <img src="https://pbs.twimg.com/profile_images/562739925838098432/yIJyCdCY.jpeg">
-            </a>
-            <a href="https://pbs.twimg.com/profile_images/562739925838098432/yIJyCdCY.jpeg" data-lightbox="one">
-                <img src="https://pbs.twimg.com/profile_images/562739925838098432/yIJyCdCY.jpeg">
-            </a>
-        </div>
-
-        <div style="direction: rtl; margin-top: 10px;">
-            سلام دوستان،
-
-            خسته نشدین از یه هفته درس و کار و تلاش؟ خسته شدین؟ خب، وقتشه که یه چند ساعتی درس و کار رو بیخیال بشیم و دور هم بشینیم بازی کنیم. از پوکر و انواع بازیا با ورق گرفته تا مونوپولی و ستلرز. میز بیلیارد هم هست که استعدادتون تو این زمینه رو نشون بدید. هر بازی دیگه ‌ای هم که دوست دارید بیارید با خودتون (مثلا کسی تخته داره؟‌ تخته بیارید یه کم از اساتید فن بازی یاد بگیرید). جمعه (۹ اکتبر) از ساعت ۶ عصر منتظرتون هستیم. تا ساعت ۸.۵ هم قراره بازی کنیم. کجا؟ تو اتاق بازی جیم دانشگاه(GRE 3.120). دیر نکنید، منتظریم!
-
-            یه نکته مهم: دوستانی که دانشجو UT نیستن (یا به عبارت دقیقتر مجوز ورود به جیم دانشگاه رو ندارن) لطفا تا ساعت ۴ عصر روز پنج‌شنبه (۸ اکتبر) به ما خبر بدن که میخوان تو این برنامه شرکت کنن. در اون صورت ما هماهنگ می کنیم که بدون پرداخت هزینه‌ای بتونن تو برنامه شرکت کنن، وگرنه این دوستان باید برای ورود به جیم مجوز یک روزه خریداری کنن.
-
-            یه نکته نه چندان مهم: ما می‌خواستیم یه مقادیری بیسکویت و شیرینی تدارک ببینیم که در کنار بازی بخوریم، ولی متوجه شدیم بین خوردن چیزی در اتاق بازی یا داشتن میز بیلیارد باید یکی رو انتخاب کنیم. ما داشتن میز بیلیارد رو انتخاب کردیم، واسه همین تو این برنامه فقط با لبخندامون ازتون پذیرایی می‌کنیم، تا برنامه‌های بعدی که خوردنی هم داشته باشیم واسه پذیرایی. :)
-
-            پس قرارمون جمعه ساعت ۶ عصر. لطفا هر چی بازی باحال دارید بیارید با خودتون، ضرر نداره. منتظر دیدن خنده‌هاتون هستیم.
-
-            ارادتمند،
-            برد PSS
-
-        </div>
-
-    </div>
+<div ng-controller="PostController as postCtrl">
+    {% include 'widgets/postviewmode.html' %}
 </div>
+
 {% endblock %}
 
 {% block bodyRight %}
@@ -156,28 +116,30 @@
 
 
 {% block endScripts %}
-{% include 'widgets/mapmodal.html' %}
-<script type="text/javascript" src="../assets/js/utils/lightbox/lightbox.min.js"></script>
-<script src="../assets/js/landing/map.js"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places&callback=initialize"></script>
-<script async defer src="http://www.geoplugin.net/javascript.gp" type="text/javascript" language="JavaScript"></script>
-<script type="text/javascript">
-    $("#owl-example").owlCarousel({
-        singleItem: true,
-        autoPlay: 4500
-    });
+    {% parent %}
+    {% include 'widgets/mapmodal.html' %}
+    <script type="text/javascript" src="../assets/js/utils/lightbox/lightbox.min.js"></script>
+    <script src="../assets/js/landing/map.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places&callback=initialize"></script>
+    <script async defer src="http://www.geoplugin.net/javascript.gp" type="text/javascript" language="JavaScript"></script>
+    <script type="text/javascript">
+        $("#owl-example").owlCarousel({
+            singleItem: true,
+            autoPlay: 4500
+        });
 
-    $('#notify-email-option-btn').on('click', function() {
-        var emailCheckBox = $(this).find('input');
-        emailCheckBox.prop("checked", !emailCheckBox.prop("checked"));
-    });
+        $('#notify-email-option-btn').on('click', function() {
+            var emailCheckBox = $(this).find('input');
+            emailCheckBox.prop("checked", !emailCheckBox.prop("checked"));
+        });
 
-    $('#map-modal-btn-admin').on('click', function(e) {
-        e.preventDefault();
-        console.log("IN HRE");
-        var inst = $.remodal.lookup[$('[data-remodal-id=map]').data('remodal')];
-        inst.open();
-    });
+        $('#map-modal-btn-admin').on('click', function(e) {
+            e.preventDefault();
+            console.log("IN HRE");
+            var inst = $.remodal.lookup[$('[data-remodal-id=map]').data('remodal')];
+            inst.open();
+        });
 
-</script>
+        $('#time').datetimepicker();
+    </script>
 {% endblock %}

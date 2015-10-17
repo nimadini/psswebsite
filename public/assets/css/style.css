@@ -59,7 +59,7 @@ a {
 }
 
 #owl-example .item {
-    background: url(http://nimadini.net/resources/images/m_2.jpg) no-repeat 50%;
+    background: url(../images/me_cover.jpg) no-repeat 50%;
     background-size: cover;
     height: 300px;
     width: 100%;
@@ -97,6 +97,10 @@ a {
 @media (max-width: 768px) {
     #pac-input {
         width: 50%;
+    }
+
+    #time {
+        margin-top: 10px;
     }
 }
 

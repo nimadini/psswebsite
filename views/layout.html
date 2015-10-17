@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="pss">
 <head lang="en">
     <meta charset="UTF-8">
     <title>Persian Student Society</title>
@@ -10,10 +10,12 @@
     {% block headScripts %}
     <script type="text/javascript" src="../assets/js/utils/jQuery/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="../assets/js/utils/bootstrap/bootstrap.min.js"></script>
+    <script src="../assets/js/utils/angular/angular.min.js"></script>
+    <script src="../assets/js/landing/app.js"></script>
     {% endblock %}
 </head>
-<body>
 
+<body >
 <div class="page-wrap">
     <div class="container">
         <nav class="navbar navbar-default">
@@ -93,5 +95,6 @@
 </body>
 
 {% block endScripts %}
+
 {% endblock %}
 </html>
