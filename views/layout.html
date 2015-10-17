@@ -15,9 +15,8 @@
 <body>
 
 <div class="page-wrap">
-    <div class="container-fluid">
+    <div class="container">
         <nav class="navbar navbar-default">
-            <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -67,13 +66,21 @@
                         </li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
         </nav>
 
-        {% block bodyTop %}
+        {% block bodyTop %} {% endblock %}
 
-        {% endblock %}
+        <hr>
 
+        <div class="row">
+            <div class="col-lg-8 col-xs-12">
+                {% block bodyLeft %} {% endblock %}
+            </div>
+
+            <div class="col-lg-4 side-bar">
+                {% block bodyRight %} {% endblock %}
+            </div>
+        </div>
         <!--<section class="block">
             <div id="myCarousel" class="carousel slide">
                 <div class="carousel-inner">
