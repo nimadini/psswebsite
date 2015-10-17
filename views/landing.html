@@ -7,12 +7,15 @@
     <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="../assets/css/lightbox.css">
     <link rel="stylesheet" href="../assets/css/dropzone.min.css">
+    <link href="../assets/css/remodal.css" rel="stylesheet">
+    <link href="../assets/css/remodal-default-theme.css" rel="stylesheet">
 {% endblock %}
 
 {% block headScripts %}
     {% parent %}
     <script type="text/javascript" src="../assets/js/utils/carousel/owl.carousel.min.js"></script>
     <script type="text/javascript" src="../assets/js/utils/dropzone/dropzone.min.js"></script>
+    <script type="text/javascript" src="../assets/js/utils/modal/remodal.min.js"></script>
 {% endblock %}
 
 
@@ -72,7 +75,7 @@
 
         <div class="row" style="padding: 10px 16px;">
             <div class="pull-left" style="margin-top: 10px;">
-                    <button class="btn btn-sm btn-default">
+                    <button id="map-modal-btn-admin" class="btn btn-sm btn-default">
                         <i class="fa fa-map-marker"></i>
                     </button>
                     <button class="btn btn-sm btn-default" id="notify-email-option-btn">
@@ -150,8 +153,13 @@
 
 {% endblock %}
 
+
 {% block endScripts %}
+{% include 'widgets/mapmodal.html' %}
 <script type="text/javascript" src="../assets/js/utils/lightbox/lightbox.min.js"></script>
+<script src="../assets/js/landing/map.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places&callback=initialize"></script>
+<script async defer src="http://www.geoplugin.net/javascript.gp" type="text/javascript" language="JavaScript"></script>
 <script type="text/javascript">
     $("#owl-example").owlCarousel({
         singleItem: true,
@@ -162,5 +170,13 @@
         var emailCheckBox = $(this).find('input');
         emailCheckBox.prop("checked", !emailCheckBox.prop("checked"));
     });
+
+    $('#map-modal-btn-admin').on('click', function(e) {
+        e.preventDefault();
+        console.log("IN HRE");
+        var inst = $.remodal.lookup[$('[data-remodal-id=map]').data('remodal')];
+        inst.open();
+    });
+
 </script>
 {% endblock %}

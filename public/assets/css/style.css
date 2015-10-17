@@ -80,8 +80,28 @@ a {
     border-radius: 15px;
 }
 
+#pac-input {
+    float: right;
+    margin-top: 10px;
+    width: 64%;
+}
+
+#pac-input:focus {
+    width: 64%;
+}
+
+.pac-container {
+    z-index: 10000 !important;
+}
+
+@media (max-width: 768px) {
+    #pac-input {
+        width: 50%;
+    }
+}
+
 /*full width container*/
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .block {
         margin-left: -20px;
         margin-right: -20px;
