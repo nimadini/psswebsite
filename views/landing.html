@@ -72,9 +72,13 @@
 
         <div class="row" style="padding: 10px 16px;">
             <div class="pull-left" style="margin-top: 10px;">
-                <button class="btn btn-sm btn-default">
-                    <i class="fa fa-map-marker"></i>
-                </button>
+                    <button class="btn btn-sm btn-default">
+                        <i class="fa fa-map-marker"></i>
+                    </button>
+                    <button class="btn btn-sm btn-default" id="notify-email-option-btn">
+                        <input type="checkbox"/> Notify via Email
+                    </button>
+
             </div>
             <div class="pull-right" style="margin-top: 10px;">
                 <button class="btn btn-sm btn-default" style="margin-right: 4px;">Create</button>
@@ -152,6 +156,11 @@
     $("#owl-example").owlCarousel({
         singleItem: true,
         autoPlay: 4500
+    });
+
+    $('#notify-email-option-btn').on('click', function() {
+        var emailCheckBox = $(this).find('input');
+        emailCheckBox.prop("checked", !emailCheckBox.prop("checked"));
     });
 </script>
 {% endblock %}
