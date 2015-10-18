@@ -41,6 +41,8 @@
 {% endblock %}
 
 {% block bodyLeft %}
+
+{% raw %}
 <div class="panel panel-default">
     <div class="panel-body">
         <div class="row" style="padding: 0 16px;">
@@ -52,46 +54,52 @@
         </div>
 
         <hr>
-        <div class="row">
-            <div class="col-xs-12 col-sm-7">
-                <input type="text" class="form-control" id="title" placeholder="Event title">
+        <form name="newPostForm" ng-controller="NewPostController as newPostCtrl"
+              ng-submit="newPostForm.$valid && newPostCtrl.createNewPost()" novalidate>
+            <div class="row">
+                <div class="col-xs-12 col-sm-7">
+                    <input type="text" class="form-control" id="title" placeholder="Event title"
+                           ng-model="newPostCtrl.newPost.title" required>
+                </div>
+
+                <div class="col-xs-12 col-sm-5">
+                    <input type="text" class="form-control" id="time" placeholder="Event time"
+                           ng-model="newPostCtrl.newPost.time">
+                </div>
             </div>
 
-            <div class="col-xs-12 col-sm-5">
-                <input type="text" class="form-control" id="time" placeholder="Event time">
+            <div class="row" style="margin-top: 15px;">
+                <div class="col-xs-12">
+                   <textarea class="form-control more" rows="4" id="content" style="resize: vertical;"
+                             placeholder="What's up?" ng-model="newPostCtrl.newPost.content" required></textarea>
+                </div>
             </div>
-        </div>
 
-        <div class="row" style="margin-top: 15px;">
-            <div class="col-xs-12">
-               <textarea class="form-control more" rows="4" id="content" style="resize: vertical;"
-                         placeholder="What's up?"></textarea>
+            <div class="row" style="padding: 10px 16px;">
+                <div class="pull-left" style="margin-top: 10px;">
+                        <button id="map-modal-btn-admin" class="btn btn-sm btn-default">
+                            <i class="fa fa-map-marker"></i>
+                        </button>
+                        <button class="btn btn-sm btn-default" id="notify-email-option-btn">
+                            <input type="checkbox" ng-model="newPostCtrl.newPost.shouldNotify"/> Notify via Email
+                        </button>
+                </div>
+                <div class="pull-right" style="margin-top: 10px;">
+                    <input type="submit" class="btn btn-sm btn-primary" value="Create">
+                </div>
             </div>
-        </div>
+
+            <div>newPostForm is {{ newPostForm.$valid }} </div>
+        </form>
 
         <form action="/file-upload" class="dropzone" style="margin-top: 15px;">
             <div class="fallback">
                 <input name="file" type="file" multiple />
             </div>
         </form>
-
-        <div class="row" style="padding: 10px 16px;">
-            <div class="pull-left" style="margin-top: 10px;">
-                    <button id="map-modal-btn-admin" class="btn btn-sm btn-default">
-                        <i class="fa fa-map-marker"></i>
-                    </button>
-                    <button class="btn btn-sm btn-default" id="notify-email-option-btn">
-                        <input type="checkbox"/> Notify via Email
-                    </button>
-
-            </div>
-            <div class="pull-right" style="margin-top: 10px;">
-                <button class="btn btn-sm btn-default" style="margin-right: 4px;">Create</button>
-                <button class="btn btn-sm btn-primary">Publish</button>
-            </div>
-        </div>
     </div>
 </div>
+{% endraw %}
 
 <div ng-controller="PostController as postCtrl">
     {% include 'widgets/postviewmode.html' %}
@@ -128,7 +136,10 @@
             autoPlay: 4500
         });
 
-        $('#notify-email-option-btn').on('click', function() {
+        $('#notify-email-option-btn').on('click', function(e) {
+            if (this !== e.target) {
+                return;
+            }
             var emailCheckBox = $(this).find('input');
             emailCheckBox.prop("checked", !emailCheckBox.prop("checked"));
         });
@@ -140,6 +151,8 @@
             inst.open();
         });
 
-        $('#time').datetimepicker();
+        $('#time').datetimepicker({
+            format:'m/d/Y, h:m A'
+        });
     </script>
 {% endblock %}

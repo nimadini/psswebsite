@@ -94,6 +94,33 @@ a {
     z-index: 10000 !important;
 }
 
+.ng-invalid.ng-dirty:required {
+    border-color: #FA787E;
+}
+
+.ng-valid.ng-dirty:required {
+    border-color: mediumseagreen;
+}
+
+.affix {
+    top: 20px !important;
+    position: fixed !important;
+    width: 360px !important;
+}
+
+@media (max-width: 1200px) {
+    .affix {
+        width: 293px !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .side-bar {
+        display: none;
+    }
+}
+
+/*full width container*/
 @media (max-width: 768px) {
     #pac-input {
         width: 50%;
@@ -102,16 +129,9 @@ a {
     #time {
         margin-top: 10px;
     }
-}
 
-/*full width container*/
-@media (max-width: 768px) {
     .block {
         margin-left: -20px;
         margin-right: -20px;
-    }
-
-    .side-bar {
-        display: none;
     }
 }

@@ -10,6 +10,7 @@
     {% block headScripts %}
     <script type="text/javascript" src="../assets/js/utils/jQuery/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="../assets/js/utils/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../assets/js/utils/bootstrap/affix.js"></script>
     <script src="../assets/js/utils/angular/angular.min.js"></script>
     <script src="../assets/js/landing/app.js"></script>
     {% endblock %}
@@ -19,49 +20,51 @@
 <div class="page-wrap">
     <div class="container">
         <nav class="navbar navbar-default">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Persian Student Society</a>
-                </div>
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Persian Student Society</a>
+            </div>
 
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right">
-                        <!--<li style="padding-top: 12px; margin-left: 10px;">
-                            <img class="img-rounded" width="28" height="28" src="http://nimadini.net/resources/images/me.jpg"/>
-                        </li>-->
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Join</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                <img src="http://www.seeklogo.net/wp-content/uploads/2013/11/facebook-flat-vector-logo-400x400.png"
-                                     width="20" height="20"/>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#"><i class="fa fa-facebook-official"></i> Sign in with Facebook</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div><!-- /.navbar-collapse -->
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <!--<li style="padding-top: 12px; margin-left: 10px;">
+                        <img class="img-rounded" width="28" height="28" src="http://nimadini.net/resources/images/me.jpg"/>
+                    </li>-->
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Join</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <img src="http://www.seeklogo.net/wp-content/uploads/2013/11/facebook-flat-vector-logo-400x400.png"
+                                 width="20" height="20"/>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"><i class="fa fa-facebook-official"></i> Sign in with Facebook</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
         </nav>
 
         {% block bodyTop %} {% endblock %}
 
         <hr>
 
-        <div class="row">
+        <div class="row" style="position: relative;">
             <div class="col-md-8 col-xs-12">
                 {% block bodyLeft %} {% endblock %}
             </div>
 
             <div class="col-md-4 col-xs-12 side-bar">
-                {% block bodyRight %} {% endblock %}
+                <div id="side-bar">
+                    {% block bodyRight %} {% endblock %}
+                </div>
             </div>
         </div>
         <!--<section class="block">
@@ -95,6 +98,12 @@
 </body>
 
 {% block endScripts %}
-
+    <script type="text/javascript">
+        $('#side-bar').affix({
+            offset: {
+                top: 440
+            }
+        });
+    </script>
 {% endblock %}
 </html>

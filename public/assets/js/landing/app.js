@@ -11,4 +11,13 @@
         }
         ];
     });
+
+    app.controller("NewPostController", function() {
+        this.newPost = {};
+
+        this.createNewPost = function() {
+            console.log("INANGI");
+
+        };
+    });
 })();
