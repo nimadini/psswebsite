@@ -5,6 +5,8 @@
     <title>Persian Student Society</title>
     {% block headStyles %}
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/fonts.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Inconsolata|Droid+Sans">
     <link href="../assets/css/style.css" rel="stylesheet">
     {% endblock %}
     {% block headScripts %}
@@ -12,6 +14,7 @@
     <script type="text/javascript" src="../assets/js/utils/bootstrap/bootstrap.min.js"></script>
     <script type="text/javascript" src="../assets/js/utils/bootstrap/affix.js"></script>
     <script src="../assets/js/utils/angular/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-sanitize.js"></script>
     <script src="../assets/js/landing/app.js"></script>
     {% endblock %}
 </head>
@@ -19,7 +22,7 @@
 <body >
 <div class="page-wrap">
     <div class="container">
-        <nav class="navbar navbar-default">
+        <nav class="navbar navbar-default" style="font-family: Tahoma, Geneva, sans-serif;">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -90,7 +93,7 @@
 
 <footer class="site-footer" id="footer">
     <div class="text-center" style="padding-top: 20px;" >Persian Student Society
-        <div style="font-size: 12px; margin-top: 10px;">
+        <div style="font-size: 12px; margin-top: 10px; font-family: 'Open Sans';">
             &copy; 2015 Nima Dini
         </div>
     </div>

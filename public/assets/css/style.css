@@ -5,7 +5,7 @@ html {
 body {
     margin-top: 10px;
     background-color: #F0F0F0;
-    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font: 15px 'BNazanin', 'Open Sans', Helvetica, Arial, sans-serif;
     text-align: justify;
     text-justify: inter-word;
     height: 100%;
@@ -59,10 +59,23 @@ a {
 }
 
 #owl-example .item {
-    background: url(../images/me_cover.jpg) no-repeat 50%;
-    background-size: cover;
     height: 300px;
     width: 100%;
+}
+
+#owl-example .item1 {
+    background: url(../../images/cover/cov1.jpg) no-repeat 50%;
+    background-size: cover;
+}
+
+#owl-example .item2 {
+    background: url(../../images/cover/cov2.jpg) no-repeat 50%;
+    background-size: cover;
+}
+
+#owl-example .item3 {
+    background: url(../../images/cover/cov3.jpg) no-repeat 50%;
+    background-size: cover;
 }
 
 .img-container {
@@ -134,4 +147,8 @@ a {
         margin-left: -20px;
         margin-right: -20px;
     }
+}
+
+pre {
+    font-family: 'BNazanin', arial, sans-serif !important;
 }

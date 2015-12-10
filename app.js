@@ -6,7 +6,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var creds = require('./config/credentials');
 var mongoose = require('mongoose');
-
+var flash = require('connect-flash');
+var session = require('express-session');
+var passport = require('passport');
 var main = require('./routes/main');
 var postCtrl = require('./controllers/post-ctrl');
 
@@ -19,6 +21,9 @@ mongoose.connect(creds.db);
 mongoose.connection.on('error', function() {
     console.error('MongoDB Connection Error. Please make sure that MongoDB is running.');
 });
+
+// require('./config/passport')(passport); // pass passport for configuration
+
 
 // ---swig expts start
 var swig = require('swig');
@@ -46,6 +51,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// required for passport
+app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+app.use(flash()); // use connect-flash for flash messages stored in session
 
 app.use('/', main);
 
