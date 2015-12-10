@@ -13,13 +13,13 @@
 
         <div class="row img-container">
             <span ng-repeat="image in post.images">
-                <a href="{{ image }}" data-lightbox="{{ post.id }}">
-                    <img src="{{ image }}">
+                <a href="{{ image }}.jpg" data-lightbox="{{ post.id }}">
+                    <img src="{{ image }}-thumb.jpg">
                 </a>
             </span>
         </div>
 
-        <pre ng-bind-html="post.content" style="direction: rtl; white-space: pre-line; unicode-bidi: embed; margin-top: 10px; font-family: 'BNazanin', 'Open Sans'; font-size: 15px; border: none !important; background: none !important"></pre>
+        <pre ng-bind-html="post.content" style="direction: rtl; unicode-bidi: embed; margin-top: 10px; font-family: 'BNazanin', 'Open Sans'; font-size: 15px; border: none !important; background: none !important"></pre>
     </div>
 </div>
 {% endraw %}
