@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Persian Student Society</title>
     {% block headStyles %}
+    <link rel="image_src" href="../images/cover/cov1.jpg" /><!--formatted-->
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="../assets/css/fonts.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Inconsolata|Droid+Sans">
@@ -24,18 +25,23 @@
     <div class="container">
         <nav class="navbar navbar-default" style="font-family: Tahoma, Geneva, sans-serif;">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
+            <ul class="navbar-header nav navbar-nav">
+                <li>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Persian Student Society</a>
-            </div>
+                </li>
+                
+                    <li class="active"><a class="navbar-brand active" href="/home"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a class="navbar-brand" href="/about"><i class="fa fa-users"></i> About</a></li>
+                    <li><a class="navbar-brand" href="/supporters"><i class="fa fa-bank"></i> Sponsors</a></li>
+                </ul>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <!--<li style="padding-top: 12px; margin-left: 10px;">
                         <img class="img-rounded" width="28" height="28" src="http://nimadini.net/resources/images/me.jpg"/>
