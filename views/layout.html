@@ -23,6 +23,7 @@
 <body >
 <div class="page-wrap">
     <div class="container">
+        <div id="tabs" ng-controller="TabsCtrl">
         <nav class="navbar navbar-default" style="font-family: Tahoma, Geneva, sans-serif;">
             <!-- Brand and toggle get grouped for better mobile display -->
             <ul class="navbar-header nav navbar-nav">
@@ -34,10 +35,20 @@
                         <span class="icon-bar"></span>
                     </button>
                 </li>
-                
-                    <li class="active"><a class="navbar-brand active" href="/home"><i class="fa fa-home"></i> Home</a></li>
+
+                <li>
+                    <ul style="margin: 0; padding: 0;">
+                        {% raw %}
+                        <li style="list-style-type: none; float: left;" ng-repeat="tab in tabs" ng-class="{active:isActiveTab(tab.url)}" ng-click="onClickTab(tab)">
+                            <a class="navbar-brand" href="#"><i class="fa {{ tab.icon }}"></i> {{tab.title}} </a>
+                        </li>
+                        {% endraw %}
+                    </ul>
+                </li>
+
+                   <!-- <li><a class="navbar-brand" href="/home"><i class="fa fa-home"></i> Home</a></li>
                     <li><a class="navbar-brand" href="/about"><i class="fa fa-users"></i> About</a></li>
-                    <li><a class="navbar-brand" href="/supporters"><i class="fa fa-bank"></i> Sponsors</a></li>
+                    <li><a class="navbar-brand" href="/supporters"><i class="fa fa-bank"></i> Sponsors</a></li>-->
                 </ul>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -67,7 +78,110 @@
 
         <div class="row" style="position: relative;">
             <div class="col-md-8 col-xs-12">
-                {% block bodyLeft %} {% endblock %}
+
+
+
+                    <div id="mainView">
+                        <div ng-include="currentTab"></div>
+                    </div>
+                <!-- </div> -->
+                <script type="text/ng-template" id="one.tpl.html">
+                    <div id="viewOne">
+                        <div ng-controller="PostController as postCtrl">
+                            {% set title = { title: "true" } %}
+                            {% include 'widgets/postviewmode.html' with title %}
+                        </div>
+                    </div>
+                </script>
+
+                <script type="text/ng-template" id="two.tpl.html">
+                    <div id="viewTwo">
+                        <div class="col-xs-6 col-sm-4">
+                            <div class="panel panel-default board-member-container">
+                                <div class="panel-body">
+                                    <img src="images/board/navid.jpg" class="board-member-avatar">
+                                </div>
+                                <div class="board-member-info">
+                                    Navid is a PhD student in CS department. He joined UT six years ago. When not doing research, he enjoys swimming and hanging out with friends.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-4">
+                            <div class="panel panel-default board-member-container">
+                                <div class="panel-body">
+                                    <img src="images/board/masoud.jpg" class="board-member-avatar">
+                                </div>
+                                <div class="board-member-info">
+                                    Masoud enjoys playing soccer.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-4">
+                            <div class="panel panel-default board-member-container">
+                                <div class="panel-body">
+                                    <img src="images/board/helia.jpg" class="board-member-avatar">
+                                </div>
+                                <div class="board-member-info">
+                                    Helia is a senior ECE student.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-4">
+                            <div class="panel panel-default board-member-container">
+                                <div class="panel-body">
+                                    <img src="images/board/shiva.jpg" class="board-member-avatar">
+                                </div>
+                                <div class="board-member-info">
+                                    Shiva is a masters student in Arts department.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-4">
+                            <div class="panel panel-default board-member-container">
+                                <div class="panel-body">
+                                    <img src="images/board/nima.jpg" class="board-member-avatar">
+                                </div>
+                                <div class="board-member-info">
+                                    Nima is a masters student in ECE department. When not hacking, he enjoys playing video games, listening to music, and hanging out with friends.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-4">
+                            <div class="panel panel-default board-member-container">
+                                <div class="panel-body">
+                                    <img src="images/board/daria.jpg" class="board-member-avatar">
+                                </div>
+                                <div class="board-member-info">
+                                    Daria is a PhD student in Geoscience department. He was the former president of PSS and is now consulting us in making a better PSS.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </script>
+
+                <script type="text/ng-template" id="three.tpl.html">
+                    <div id="viewThree">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div style="font-size: medium; padding-left: 10px; margin-bottom: 20px;">
+                                    We would like to thank the following individuals and organisations
+                                    for their generous contributions:
+                                </div>
+                                <div style="height: 200px;">
+                                    <div style="float: left;">
+                                        <a href="https://www.studypool.com" target="_blank">
+                                            <img src="images/sponsors/studypool.png" class="sponsor-avatar"/>
+                                        </a>
+                                    </div>
+                                    <div style="margin-left: 40px; float: left; font-size: medium; margin-top: 90px;">
+                                        <a href="https://www.studypool.com" target="_blank">StudyPool</a>, a leader in online homework help.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </script>
+
             </div>
 
             <div class="col-md-4 col-xs-12 side-bar">
@@ -94,6 +208,7 @@
 
             </div>
         </section>-->
+        </div>
     </div>
 </div>
 

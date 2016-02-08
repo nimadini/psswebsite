@@ -72,13 +72,16 @@ https://www.utexas.edu/universityunions/texas-union/scene/underground/facilities
 
     app.controller('TabsCtrl', ['$scope', function ($scope) {
             $scope.tabs = [{
-                title: 'One',
+                title: 'Home',
+                icon: 'fa-home',
                 url: 'one.tpl.html'
             }, {
-                title: 'Two',
+                title: 'About',
+                icon: 'fa-users',
                 url: 'two.tpl.html'
             }, {
-                title: 'Three',
+                title: 'Sponsors',
+                icon: 'fa-bank',
                 url: 'three.tpl.html'
             }];
 
