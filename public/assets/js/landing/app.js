@@ -4,13 +4,23 @@
     app.controller("PostController", function() {
         this.posts = [
             {
+                title: 'Movie Night (Screening "Hich" by A. Kahani)',
+                content: 'PSS is hosting a public screening of "Hich", a movie by Abdolreza Kahani. Join us for this free event in SAC Auditorium (SAC 1.402) at 7:15 pm on Tuesday 4/26.\n\n* The movie is in Farsi, with English subtitle.',
+                images: [
+                    'images/movies/hich'
+                ],
+                id: 'id4',
+                dir: 'ltr'
+            },
+            {
                 title: 'Nowruz Celebration (عید نوروز)',
                 content: 'سال نو داره از راه می‌رسه و چه بهونه‌ای از این بهتر برای دور هم بودن و گفتن و خندیدن و رقصیدن! \n\nساعت ۸ شب شنبه ۲۶ مارچ منتظرتون هستیم تا لحظات پر از شادی رو در کنار هم بسازیم. قسمت اول برنامه رو به گفت و شنود و بازی و خنده اختصاص میدیم و در قسمت دوم مشغول رقص و پایکوبی میشیم. در فاصله بین دو قسمت هم با شام از عزیزان پذیرایی میشه. مثل برنامه‌های قبلی آوردن نوشیدنی‌های الکلی به مراسم آزاد است و به همین دلیل متاسفانه از پذیرایی از افراد زیر ۲۱ سال معذوریم. \n\nهزینه شرکت در برنامه در صورت خرید بلیط تا ساعت ۱۲ شب پنجشنبه ۲۴ مارچ ، ۱۵ دلار برای دانشجویان و ۲۲ دلار برای غیردانشجویان، و بعد از آن (از جمله در محل برگزاری مراسم) ۳۰ دلار برای همه است. برای خرید آنلاین بلیط لطفا مبلغ رو به حساب Paypal گروه (iranians@uts.cc.utexas.edu) واریز کنید. (لطفا از گزینه Send money to friends and family استفاده کنید.) \n\n',
                 images: [
                     'images/nowruz/2016/2',
-                    'images/nowruz/2016/1',
+                    'images/nowruz/2016/1'
                 ],
-                id: 'id3'
+                id: 'id3',
+                dir: 'rtl'
             },
             {
                 title: 'Yalda Night (شب یلدا)',
@@ -30,7 +40,8 @@
                     'images/yalda/3',
                     'images/yalda/4'
                 ],
-                id: 'id1'
+                id: 'id1',
+                dir: 'rtl'
             },
             {
                 title: 'Bowling Night',
@@ -46,7 +57,8 @@ https://www.utexas.edu/universityunions/texas-union/scene/underground/facilities
                 'images/bowling/3',
                 'images/bowling/4'
             ],
-                id: 'id0'
+                id: 'id0',
+                dir: 'rtl'
             },
             {
                 title: 'Game Night',
@@ -65,7 +77,8 @@ https://www.utexas.edu/universityunions/texas-union/scene/underground/facilities
                     'images/game-night/6',
                     'images/game-night/7'
                 ],
-                id: 'id2'
+                id: 'id2',
+                dir: 'rtl'
             }
         ];
     });
