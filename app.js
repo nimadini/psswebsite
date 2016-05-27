@@ -17,10 +17,12 @@ var app = express();
 /**
  * Connect to MongoDB.
  */
-mongoose.connect(creds.db);
+
 mongoose.connection.on('error', function() {
     console.error('MongoDB Connection Error. Please make sure that MongoDB is running.');
 });
+
+mongoose.connect(creds.db);
 
 // require('./config/passport')(passport); // pass passport for configuration
 

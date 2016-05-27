@@ -19,6 +19,8 @@
     <script type="text/javascript" src="../assets/js/utils/modal/remodal.min.js"></script>
     <script type="text/javascript" src="../assets/js/utils/datetime/moment-with-locales.js"></script>
     <script type="text/javascript" src="../assets/js/utils/datetime/jquery.datetimepicker.full.min.js"></script>
+    <script type="text/javascript" src="../assets/js/utils/RTLText/twitter-text-1.5.0.js"></script>
+    <script type="text/javascript" src="../assets/js/utils/RTLText/RTLText.module.js"></script>
 {% endblock %}
 
 {% block bodyTop %}
@@ -35,7 +37,7 @@
 {% block bodyLeft %}
 
 {% raw %}
-<div class="panel panel-default" style="display: none;">
+<div class="panel panel-default">
     <div class="panel-body">
         <div class="row" style="padding: 0 16px;">
             <div class="pull-left">
@@ -68,14 +70,7 @@
             </div>
 
             <div class="row" style="padding: 10px 16px;">
-                <div class="pull-left" style="margin-top: 10px;">
-                        <button id="map-modal-btn-admin" class="btn btn-sm btn-default">
-                            <i class="fa fa-map-marker"></i>
-                        </button>
-                        <button class="btn btn-sm btn-default" id="notify-email-option-btn">
-                            <input type="checkbox" ng-model="newPostCtrl.newPost.shouldNotify"/> Notify via Email
-                        </button>
-                </div>
+
                 <div class="pull-right" style="margin-top: 10px;">
                     <input type="submit" class="btn btn-sm btn-primary" value="Create">
                 </div>
@@ -153,6 +148,13 @@
 
         $('#time').datetimepicker({
             format:'m/d/Y, h:m A'
+        });
+
+        $(document).ready(function(){
+            var $textarea = $('#content');
+            $textarea.on('keyup', RTLText.onTextChange);
+            $textarea.on('keydown', RTLText.onTextChange);
+            RTLText.setText($textarea.get(0), $textarea.val());
         });
     </script>
 {% endblock %}

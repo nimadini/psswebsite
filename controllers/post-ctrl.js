@@ -8,7 +8,6 @@ function getPosts(req, res, next) {
     // the `-1` in .sort() means descending order
     Post.find({})
         .lean()
-        .limit(10)
         .exec(function(err, posts) {
             if (err) {
                 return res.json({
@@ -35,7 +34,6 @@ function storePost(req, res, next) {
     var p = new Post();
     p.content = "content 2";
     p.title = "NEW POST 2";
-    p.uuid = "abcde";
     p.save(function(err, data) {
         if (err) {
             return res.json({

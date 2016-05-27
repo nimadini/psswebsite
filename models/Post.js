@@ -5,13 +5,6 @@ var autoIncrement = require('mongoose-auto-increment');
 autoIncrement.initialize(mongoose.connection);
 
 var PostSchema = new mongoose.Schema({
-    uuid: {
-        type: String,
-        index: {
-            unique: true
-        }
-    },
-
     author: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
@@ -33,36 +26,13 @@ var PostSchema = new mongoose.Schema({
         type: Date
     },
 
-    updateTime: {
-        type:Date
-    },
-
-    location: [{
-        type: Number
-    }],
-
-    indexText: {
-        type: String
-    },
-
-    address: {
-        type: String
-    },
-
-    fbId: {
+    location: {
         type: String
     }
 });
 
 PostSchema.plugin(autoIncrement.plugin,
-    { model: 'Post', field: 'postId', unique: false });
+    { model: 'Post', field: 'postId', startAt: 0, incrementBy: 1 });
 
-PostSchema.index({
-    indexText: 'text'
-});
-
-PostSchema.index({
-    location: '2dsphere'
-});
 
 module.exports = mongoose.model('Post', PostSchema);

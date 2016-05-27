@@ -87,6 +87,7 @@
                 <!-- </div> -->
                 <script type="text/ng-template" id="one.tpl.html">
                     <div id="viewOne">
+                        {% block bodyLeft %} {% endblock %}
                         <div ng-controller="PostController as postCtrl">
                             {% set title = { title: "true" } %}
                             {% include 'widgets/postviewmode.html' with title %}
