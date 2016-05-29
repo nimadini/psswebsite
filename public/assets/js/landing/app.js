@@ -1,7 +1,23 @@
 (function(){
     var app = angular.module('pss', ['ngSanitize']);
 
-    app.controller("PostController", function() {
+    app.controller('PostController', function($http) {
+        var $that = this;
+
+        $http({
+            method : "GET",
+            url : "/getPosts"
+        }).then(function mySucces(response) {
+            $that.posts = response.data.posts;
+            console.log('*****************writing response: ');
+            console.log(response.data);
+        }, function myError(response) {
+            $that.posts = [];
+            console.log('****************oops in retrieving posts');
+        });
+    });
+
+    app.controller("PostController2", function() {
         this.posts = [
             {
                 title: 'Movie Night (Screening "Hich" by A. Kahani)',

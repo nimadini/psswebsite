@@ -10,11 +10,19 @@ var PostSchema = new mongoose.Schema({
         ref: 'User'
     },
 
+    title: {
+        type: String
+    },
+
     content: {
         type: String
     },
 
-    title: {
+    dir: {
+        type: String
+    },
+
+    id: {
         type: String
     },
 
